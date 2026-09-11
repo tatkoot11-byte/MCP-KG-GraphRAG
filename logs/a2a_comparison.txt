@@ -1,0 +1,5 @@
+A2A Direct vs MCP Comparison
+
+Latency: Direct mode uses in-process agent calls; MCP mode adds MCP tool-call overhead.
+Error count: Direct mode = 0 errors in successful run; MCP mode = 0 errors in successful run.
+Code complexity: Direct mode is lower complexity; MCP mode is higher due to MCP server/tool integration.

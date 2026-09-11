@@ -1,0 +1,13 @@
+{
+  "duplicate_entity_rate": 0.0,
+  "missing_relation_rate": 0.0,
+  "schema_violations": 0,
+  "details": {
+    "duplicate_person_names": 0,
+    "required_node_labels_present": true,
+    "required_relationship_types_present": true,
+    "project_aswan_workers": 4,
+    "project_aswan_vendor": "Delta Analytics",
+    "overall_passed": true
+  }
+}

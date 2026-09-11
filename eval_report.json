@@ -1,0 +1,26 @@
+{
+  "evaluation_suite": "DeepEval GraphRAG Evaluation",
+  "test_cases": 8,
+  "metrics": {
+    "Faithfulness": {
+      "threshold": 0.7,
+      "status": "configured"
+    },
+    "ProvenanceCompleteness": {
+      "threshold": 0.7,
+      "status": "configured"
+    }
+  },
+  "graph_quality": {
+    "duplicate_entity_rate": 0.0,
+    "missing_relation_rate": 0.0,
+    "schema_violations": 0
+  },
+  "evaluation_status": "prepared",
+  "notes": [
+    "Eight evaluation cases are stored in data/eval_cases.jsonl.",
+    "DeepEval is configured with Faithfulness and ProvenanceCompleteness metrics.",
+    "Gemini Free Tier quota was exhausted during the evaluation run, so metric scores could not be completed.",
+    "Graph quality checks passed successfully."
+  ]
+}

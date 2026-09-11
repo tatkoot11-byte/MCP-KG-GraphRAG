@@ -1,0 +1,56 @@
+{"timestamp": "2026-09-11T11:05:40.456796+00:00", "trace_id": "6cbcbb74-6a67-4eb5-8908-234feb0c4d98", "agent": "orchestrator", "event": "orchestrator_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:05:40.457521+00:00", "trace_id": "6cbcbb74-6a67-4eb5-8908-234feb0c4d98", "agent": "orchestrator", "event": "delegating_to_supervisor", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:05:40.458048+00:00", "trace_id": "6cbcbb74-6a67-4eb5-8908-234feb0c4d98", "agent": "orchestrator", "event": "orchestrator_completed", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:08:17.728817+00:00", "trace_id": "0833dd13-eccf-4737-ace6-bedcd6309191", "agent": "supervisor", "event": "supervisor_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:08:17.729511+00:00", "trace_id": "0833dd13-eccf-4737-ace6-bedcd6309191", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:08:17.730500+00:00", "trace_id": "0833dd13-eccf-4737-ace6-bedcd6309191", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:11:12.709093+00:00", "trace_id": "TEST-TRACE-001", "agent": "specialist", "event": "specialist_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:11:12.709826+00:00", "trace_id": "TEST-TRACE-001", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T11:13:13.351553+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "orchestrator", "event": "orchestrator_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:13:13.352404+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "orchestrator", "event": "delegating_to_supervisor", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:13:13.352987+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "supervisor", "event": "supervisor_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:13:13.353514+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:13:13.354000+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "specialist", "event": "specialist_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:13:13.354549+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T11:13:13.355079+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:13:13.355900+00:00", "trace_id": "f33b466e-9009-4c26-bd8a-0473da8ba254", "agent": "orchestrator", "event": "orchestrator_completed", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:17:44.787291+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "orchestrator", "event": "orchestrator_started", "task": "What teams are involved in Project Aswan?", "mode": "direct"}
+{"timestamp": "2026-09-11T11:17:44.788198+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "orchestrator", "event": "delegating_to_supervisor", "mode": "direct", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:17:44.788755+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "supervisor", "event": "supervisor_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T11:17:44.789285+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:17:44.789744+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "specialist", "event": "specialist_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T11:17:44.790280+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T11:17:44.790781+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:17:44.791192+00:00", "trace_id": "9472e521-1d42-4578-b07e-a29c098e1505", "agent": "orchestrator", "event": "orchestrator_completed", "mode": "direct", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:18:15.068970+00:00", "trace_id": "1a57ded9-d3b5-4282-96aa-76b7ccbb29e7", "agent": "orchestrator", "event": "orchestrator_started", "task": "What teams are involved in Project Aswan?", "mode": "mcp"}
+{"timestamp": "2026-09-11T11:18:15.069833+00:00", "trace_id": "1a57ded9-d3b5-4282-96aa-76b7ccbb29e7", "agent": "orchestrator", "event": "calling_mcp", "tool": "search_docs"}
+{"timestamp": "2026-09-11T11:18:18.918371+00:00", "trace_id": "1a57ded9-d3b5-4282-96aa-76b7ccbb29e7", "agent": "orchestrator", "event": "orchestrator_completed", "mode": "mcp", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:19:18.810805+00:00", "trace_id": "e0691b22-cfee-41c5-bcd8-1c57d5236c76", "agent": "orchestrator", "event": "orchestrator_started", "task": "", "mode": "direct"}
+{"timestamp": "2026-09-11T11:19:18.811537+00:00", "trace_id": "e0691b22-cfee-41c5-bcd8-1c57d5236c76", "agent": "orchestrator", "event": "orchestrator_error", "error": "Task cannot be empty."}
+{"timestamp": "2026-09-11T11:19:52.450238+00:00", "trace_id": "ERROR-TEST-001", "agent": "supervisor", "event": "supervisor_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:19:52.450965+00:00", "trace_id": "ERROR-TEST-001", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:19:52.451899+00:00", "trace_id": "ERROR-TEST-001", "agent": "specialist", "event": "specialist_started", "task": "Who works on Project Aswan?"}
+{"timestamp": "2026-09-11T11:19:52.453269+00:00", "trace_id": "ERROR-TEST-001", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T11:19:52.454075+00:00", "trace_id": "ERROR-TEST-001", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:48:25.472486+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "orchestrator", "event": "orchestrator_started", "task": "What teams are involved in Project Aswan?", "mode": "direct"}
+{"timestamp": "2026-09-11T11:48:25.474418+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "orchestrator", "event": "delegating_to_supervisor", "mode": "direct", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:48:25.475083+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "supervisor", "event": "supervisor_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T11:48:25.475862+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:48:25.476978+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "specialist", "event": "specialist_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T11:48:25.478246+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T11:48:25.479088+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:48:25.479731+00:00", "trace_id": "b4b69709-ff76-4448-92a6-088c5c33e51d", "agent": "orchestrator", "event": "orchestrator_completed", "mode": "direct", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T11:49:01.618291+00:00", "trace_id": "ERROR-PROP-001", "agent": "supervisor", "event": "supervisor_started", "task": "Test error propagation"}
+{"timestamp": "2026-09-11T11:49:01.619043+00:00", "trace_id": "ERROR-PROP-001", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T11:49:01.620531+00:00", "trace_id": "ERROR-PROP-001", "agent": "supervisor", "event": "supervisor_error", "error": "TEST SPECIALIST FAILURE", "specialist_calls": 1}
+{"timestamp": "2026-09-11T12:00:28.374840+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "orchestrator", "event": "orchestrator_started", "task": "What teams are involved in Project Aswan?", "mode": "direct"}
+{"timestamp": "2026-09-11T12:00:28.377985+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "orchestrator", "event": "delegating_to_supervisor", "mode": "direct", "delegation_count": 1}
+{"timestamp": "2026-09-11T12:00:28.379704+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "supervisor", "event": "supervisor_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T12:00:28.381114+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "supervisor", "event": "delegating_to_specialist", "specialist_calls": 1}
+{"timestamp": "2026-09-11T12:00:28.382669+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "specialist", "event": "specialist_started", "task": "What teams are involved in Project Aswan?"}
+{"timestamp": "2026-09-11T12:00:28.383903+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "specialist", "event": "specialist_completed", "status": "success"}
+{"timestamp": "2026-09-11T12:00:28.385306+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "supervisor", "event": "supervisor_completed", "status": "success", "specialist_calls": 1}
+{"timestamp": "2026-09-11T12:00:28.386560+00:00", "trace_id": "1fc5fc7b-7547-487d-8f99-5741a5b2f429", "agent": "orchestrator", "event": "orchestrator_completed", "mode": "direct", "status": "success", "delegation_count": 1}
+{"timestamp": "2026-09-11T12:00:56.786265+00:00", "trace_id": "695c9bad-b195-4287-b11d-35f51f910877", "agent": "orchestrator", "event": "orchestrator_started", "task": "What teams are involved in Project Aswan?", "mode": "mcp"}
+{"timestamp": "2026-09-11T12:00:56.788717+00:00", "trace_id": "695c9bad-b195-4287-b11d-35f51f910877", "agent": "orchestrator", "event": "calling_mcp", "tool": "search_docs"}
+{"timestamp": "2026-09-11T12:01:02.639460+00:00", "trace_id": "695c9bad-b195-4287-b11d-35f51f910877", "agent": "orchestrator", "event": "orchestrator_completed", "mode": "mcp", "status": "success", "delegation_count": 1}
