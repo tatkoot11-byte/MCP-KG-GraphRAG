@@ -1,0 +1,70 @@
+{
+  "overall_passed": true,
+  "checks": {
+    "required_node_labels": {
+      "required": [
+        "Doc",
+        "Person",
+        "Project",
+        "Team",
+        "Vendor"
+      ],
+      "found": [
+        "Doc",
+        "Person",
+        "Project",
+        "Team",
+        "Vendor"
+      ],
+      "passed": true
+    },
+    "required_relationship_types": {
+      "required": [
+        "MEMBER_OF",
+        "MENTIONS",
+        "REPORTS_TO",
+        "VENDOR_OF",
+        "WORKS_ON"
+      ],
+      "found": [
+        "MEMBER_OF",
+        "MENTIONS",
+        "REPORTS_TO",
+        "SUPERVISES",
+        "VENDOR_OF",
+        "WORKS_ON"
+      ],
+      "passed": true
+    },
+    "duplicate_person_names": {
+      "duplicates": [],
+      "passed": true
+    },
+    "project_aswan_workers": {
+      "results": [
+        {
+          "person": "Karim Adel"
+        },
+        {
+          "person": "Nour Ibrahim"
+        },
+        {
+          "person": "Salma Farouk"
+        },
+        {
+          "person": "Yara Hassan"
+        }
+      ],
+      "expected_minimum": 4,
+      "passed": true
+    },
+    "project_aswan_vendor": {
+      "results": [
+        {
+          "vendor": "Delta Analytics"
+        }
+      ],
+      "passed": true
+    }
+  }
+}

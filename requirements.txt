@@ -1,0 +1,12 @@
+mcp
+langgraph
+langchain
+langchain-google-genai
+langchain-neo4j
+neo4j
+faiss-cpu
+chainlit
+deepeval
+pydantic
+structlog
+python-dotenv

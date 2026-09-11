@@ -1,0 +1,22 @@
+TaharaCo — Team Rosters and Reporting Chain
+
+TaharaCo has two main teams supporting Project Aswan: the Strategy Team and the Data & Operations Team.
+
+Strategy Team:
+Yara Hassan — Project Lead — reports to Omar Nabil.
+Mariam Samir — Strategy Consultant — reports to Yara Hassan.
+Omar Nabil — Director of Consulting — supervises the Strategy Team.
+
+Data & Operations Team:
+Karim Adel — Data Analyst — reports to Salma Farouk.
+Nour Ibrahim — Operations Specialist — reports to Salma Farouk.
+Salma Farouk — Head of Data & Operations — supervises the Data & Operations Team and reports to Omar Nabil.
+
+Project Aswan reporting chain:
+Mariam Samir reports to Yara Hassan.
+Yara Hassan reports to Omar Nabil.
+Karim Adel reports to Salma Farouk.
+Nour Ibrahim reports to Salma Farouk.
+Salma Farouk reports to Omar Nabil.
+
+For Project Aswan, Yara Hassan coordinates the overall project work. Salma Farouk is responsible for validating operational and data-related work. Both Yara Hassan and Salma Farouk report ultimately to Omar Nabil.

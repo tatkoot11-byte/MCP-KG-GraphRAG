@@ -1,0 +1,17 @@
+TaharaCo — Project Aswan Brief
+
+Project Aswan is a client consulting project at TaharaCo focused on improving logistics operations for a regional retail company.
+
+The core teams involved are the Strategy Team and the Data & Operations Team.
+
+Yara Hassan is the Project Lead for Project Aswan. She works with the Strategy Team and reports to Omar Nabil, Director of Consulting.
+
+The Data & Operations Team supports the project by analyzing delivery performance and operational data. Karim Adel is the team's data analyst and reports to Salma Farouk, Head of Data & Operations.
+
+The Strategy Team is responsible for the client roadmap, business recommendations, and final project specification. The Data & Operations Team is responsible for validating metrics, operational assumptions, and data-related sections of the specification.
+
+The final Project Aswan specification should be reviewed by Yara Hassan for project scope and by Salma Farouk for operational and data accuracy. Omar Nabil provides final management oversight.
+
+TaharaCo uses Delta Analytics as a vendor for logistics data services. Delta Analytics provides delivery-performance datasets used by the Data & Operations Team.
+
+The final specification should not be approved until both the strategy scope and operational data sections have been reviewed.

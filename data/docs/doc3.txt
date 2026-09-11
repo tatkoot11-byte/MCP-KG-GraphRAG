@@ -1,0 +1,24 @@
+TaharaCo — Vendor and Final Specification Notes
+
+Delta Analytics is an external vendor that provides logistics and delivery-performance datasets to TaharaCo.
+
+Delta Analytics supports Project Aswan through the Data & Operations Team. Karim Adel uses Delta Analytics datasets to validate delivery metrics, while Nour Ibrahim uses the same data to check operational assumptions.
+
+The Project Aswan final specification contains three major sections: business strategy, operational design, and data validation.
+
+Yara Hassan owns the business strategy section and is responsible for confirming that the proposed recommendations match the client's goals.
+
+Salma Farouk owns the operational design and data validation sections. She must verify delivery metrics, operational assumptions, and data quality before the final specification is approved.
+
+Karim Adel should review the detailed delivery metrics with Salma Farouk before they are included in the final specification.
+
+Nour Ibrahim should review operational assumptions with Salma Farouk.
+
+The recommended final review process is:
+1. Karim Adel validates the delivery metrics with Delta Analytics data.
+2. Nour Ibrahim validates the operational assumptions.
+3. Salma Farouk reviews the complete operational and data sections.
+4. Yara Hassan reviews the business strategy and overall project scope.
+5. Omar Nabil provides final management oversight.
+
+A final specification review should involve both Yara Hassan and Salma Farouk because they cover different parts of Project Aswan. Omar Nabil should be consulted for final approval.
