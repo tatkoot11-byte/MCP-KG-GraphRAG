@@ -137,6 +137,7 @@ async def main(message: cl.Message):
         for item in retrieval["vector_results"]:
             lines.append(
                 f"- {item['passage_id']} "
+                f"| preview: {str(item.get('text', ''))[:200]}"
                 f"({item['doc_id']}) "
                 f"distance={item['vector_distance']:.4f}"
             )

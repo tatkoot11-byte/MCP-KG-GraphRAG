@@ -109,7 +109,25 @@ def run_evaluation():
         # For the offline/demo evaluation artifact, the expected answer
         # is used as the actual answer. DeepEval can then evaluate the
         # supplied evidence/provenance when the Gemini quota is available.
-        actual_output = item["expected_output"]
+        try:
+            from graphrag_answer import generate_answer
+
+            generated = generate_answer(item["input"])
+
+            if isinstance(generated, tuple):
+                actual_output = generated[0]
+            elif isinstance(generated, dict):
+                actual_output = generated.get(
+                    "answer",
+                    generated.get("output", str(generated))
+                )
+            else:
+                actual_output = str(generated)
+
+        except Exception as generation_error:
+            actual_output = (
+                f"GraphRAG generation failed: {generation_error}"
+            )
 
         test_case = LLMTestCase(
             input=item["input"],

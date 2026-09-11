@@ -81,6 +81,8 @@ def run_specialist(
             "agent": "specialist",
             "status": "error",
             "task": task,
+            "tool_input": task,
+            "reason": str(exc),
             "error": str(exc),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }

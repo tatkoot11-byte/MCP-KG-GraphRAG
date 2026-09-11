@@ -46,17 +46,23 @@ def run_supervisor(
     )
 
     if not task.strip():
+        error_message = "Task cannot be empty."
+
         result = {
             "trace_id": trace_id,
             "agent": "supervisor",
             "status": "error",
-            "error": "Task cannot be empty.",
+            "error": error_message,
+            "tool_input": task,
+            "reason": error_message,
         }
 
         write_log(
             "supervisor_error",
             trace_id,
-            error=result["error"],
+            error=error_message,
+            tool_input=task,
+            reason=error_message,
         )
 
         return result
@@ -75,6 +81,7 @@ def run_supervisor(
             "delegating_to_specialist",
             trace_id,
             specialist_calls=specialist_calls,
+            tool_input=task,
         )
 
         result = run_specialist(
@@ -90,12 +97,24 @@ def run_supervisor(
                 "Specialist returned an unknown error.",
             )
 
+            tool_input = result.get(
+                "tool_input",
+                task,
+            )
+
+            reason = result.get(
+                "reason",
+                error_message,
+            )
+
             output = {
                 "trace_id": trace_id,
                 "agent": "supervisor",
                 "status": "error",
                 "specialist_calls": specialist_calls,
                 "error": error_message,
+                "tool_input": tool_input,
+                "reason": reason,
                 "worker": result,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
@@ -104,6 +123,8 @@ def run_supervisor(
                 "supervisor_error",
                 trace_id,
                 error=error_message,
+                tool_input=tool_input,
+                reason=reason,
                 specialist_calls=specialist_calls,
             )
 
@@ -129,19 +150,25 @@ def run_supervisor(
         return output
 
     except Exception as exc:
+        error_message = str(exc)
+
         output = {
             "trace_id": trace_id,
             "agent": "supervisor",
             "status": "error",
             "specialist_calls": specialist_calls,
-            "error": str(exc),
+            "error": error_message,
+            "tool_input": task,
+            "reason": error_message,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
 
         write_log(
             "supervisor_error",
             trace_id,
-            error=str(exc),
+            error=error_message,
+            tool_input=task,
+            reason=error_message,
             specialist_calls=specialist_calls,
         )
 
