@@ -1,5 +1,34 @@
 A2A Direct vs MCP Comparison
 
-Latency: Direct mode uses in-process agent calls; MCP mode adds MCP tool-call overhead.
-Error count: Direct mode = 0 errors in successful run; MCP mode = 0 errors in successful run.
-Code complexity: Direct mode is lower complexity; MCP mode is higher due to MCP server/tool integration.
+Task:
+What teams are involved in Project Aswan?
+
+Measured results from recorded successful runs:
+
+1. Latency
+- Direct mode: 11.72 ms
+- MCP mode: 5853.20 ms
+- MCP adds approximately 5.84 seconds of execution overhead in the recorded run.
+
+2. Error count
+- Direct mode: 0 errors
+- MCP mode: 0 errors
+
+3. Tool calls
+- Direct mode: 0 MCP tool calls
+- MCP mode: 1 MCP tool call (search_docs)
+
+4. Code complexity
+- Direct mode: lower runtime integration complexity because agents communicate through in-process Python calls.
+- MCP mode: higher integration complexity because the orchestrator communicates with a separate MCP server through the MCP protocol.
+
+5. Traceability
+- Both modes use a shared trace_id for correlating orchestrator, supervisor, and specialist events where applicable.
+
+6. Runtime limits
+- Maximum delegations per run: 3
+- Maximum tool calls per agent: 5
+- Maximum tool calls per run: 10
+
+Conclusion:
+The recorded Direct run was substantially faster than the recorded MCP run, while both completed successfully with zero errors. MCP introduced additional protocol and server-process overhead, but provided a clear tool boundary through the search_docs MCP tool.

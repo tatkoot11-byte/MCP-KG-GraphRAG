@@ -3,10 +3,18 @@ from typing import List
 
 from pydantic import BaseModel, Field
 from mcp.server.fastmcp import FastMCP
+from langchain_google_genai import (
+    GoogleGenerativeAIEmbeddings,
+    ChatGoogleGenerativeAI,
+)
+from dotenv import load_dotenv
+import os
 
 
 BASE_DIR = Path(__file__).resolve().parent
 DOCS_DIR = BASE_DIR / "data" / "docs"
+
+load_dotenv(BASE_DIR / ".env")
 
 mcp = FastMCP("TaharaCo MCP Server")
 
@@ -39,11 +47,22 @@ def load_documents() -> List[dict]:
     return documents
 
 
-def score_document(query: str, text: str) -> int:
-    query_words = set(query.lower().split())
-    text_words = set(text.lower().split())
+def get_embeddings():
+    return GoogleGenerativeAIEmbeddings(
+        model="models/gemini-embedding-001",
+        google_api_key=os.environ["GEMINI_API_KEY"],
+    )
 
-    return len(query_words.intersection(text_words))
+
+def cosine_similarity(a: List[float], b: List[float]) -> float:
+    dot = sum(x * y for x, y in zip(a, b))
+    norm_a = sum(x * x for x in a) ** 0.5
+    norm_b = sum(x * x for x in b) ** 0.5
+
+    if norm_a == 0 or norm_b == 0:
+        return 0.0
+
+    return dot / (norm_a * norm_b)
 
 
 @mcp.tool()
@@ -52,7 +71,7 @@ def search_docs(
     top_k: int = Field(default=3, ge=1, le=10),
 ) -> dict:
     """
-    Search TaharaCo documents and return the most relevant passages.
+    Perform semantic search over TaharaCo documents.
     """
 
     validated = SearchDocsInput(
@@ -61,18 +80,38 @@ def search_docs(
     )
 
     documents = load_documents()
+
+    if not documents:
+        return {
+            "query": validated.query,
+            "results": [],
+        }
+
+    embeddings = get_embeddings()
+
+    query_embedding = embeddings.embed_query(
+        validated.query
+    )
+
+    document_embeddings = embeddings.embed_documents(
+        [doc["text"] for doc in documents]
+    )
+
     scored = []
 
-    for doc in documents:
-        score = score_document(
-            validated.query,
-            doc["text"],
+    for doc, doc_embedding in zip(
+        documents,
+        document_embeddings,
+    ):
+        score = cosine_similarity(
+            query_embedding,
+            doc_embedding,
         )
 
         scored.append(
             {
                 "doc_id": doc["doc_id"],
-                "score": score,
+                "score": round(score, 6),
                 "text": doc["text"][:1000],
             }
         )
@@ -121,7 +160,7 @@ def summarize_text(
     max_words: int = Field(default=100, ge=10, le=500),
 ) -> dict:
     """
-    Create a bounded summary of the supplied text.
+    Generate an LLM-backed summary of the supplied text.
     """
 
     validated = SummarizeTextInput(
@@ -129,11 +168,32 @@ def summarize_text(
         max_words=max_words,
     )
 
-    words = validated.text.split()
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-3.6-flash",
+        google_api_key=os.environ["GEMINI_API_KEY"],
+        temperature=0,
+    )
 
-    if len(words) <= validated.max_words:
-        summary = validated.text
-    else:
+    prompt = f"""
+Summarize the following text accurately.
+
+Requirements:
+- Preserve the important facts.
+- Do not invent information.
+- Keep the summary at or below {validated.max_words} words.
+- Return only the summary.
+
+Text:
+{validated.text}
+"""
+
+    response = llm.invoke(prompt)
+
+    summary = response.content.strip()
+
+    words = summary.split()
+
+    if len(words) > validated.max_words:
         summary = " ".join(
             words[:validated.max_words]
         ) + "..."
@@ -141,6 +201,7 @@ def summarize_text(
     return {
         "summary": summary,
         "word_limit": validated.max_words,
+        "llm_backed": True,
     }
 
 
