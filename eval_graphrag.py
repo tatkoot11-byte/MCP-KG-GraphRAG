@@ -1,3 +1,4 @@
+
 import json
 import os
 from pathlib import Path
@@ -9,14 +10,13 @@ from deepeval.test_case import LLMTestCase, SingleTurnParams
 from dotenv import load_dotenv
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parent
 EVAL_DIR = PROJECT_ROOT / "evaluation"
 EVAL_DIR.mkdir(exist_ok=True)
 
 EVAL_CASES_FILE = PROJECT_ROOT / "data" / "eval_cases.jsonl"
 
 load_dotenv(PROJECT_ROOT / ".env")
-
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not GEMINI_API_KEY:
@@ -34,7 +34,6 @@ def load_eval_cases():
     with EVAL_CASES_FILE.open("r", encoding="utf-8") as file:
         for line_number, line in enumerate(file, start=1):
             line = line.strip()
-
             if not line:
                 continue
 
@@ -52,7 +51,6 @@ def load_eval_cases():
             }
 
             missing = required_fields - item.keys()
-
             if missing:
                 raise ValueError(
                     f"Line {line_number} is missing fields: {sorted(missing)}"
@@ -171,3 +169,4 @@ def run_evaluation():
 
 if __name__ == "__main__":
     run_evaluation()
+
