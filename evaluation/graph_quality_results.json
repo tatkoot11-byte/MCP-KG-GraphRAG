@@ -1,5 +1,10 @@
 {
   "overall_passed": true,
+  "metrics": {
+    "duplicate_entity_rate": 0.0,
+    "missing_relation_rate": 0.0,
+    "schema_violations": 0
+  },
   "checks": {
     "required_node_labels": {
       "required": [
@@ -16,6 +21,7 @@
         "Team",
         "Vendor"
       ],
+      "missing": [],
       "passed": true
     },
     "required_relationship_types": {
@@ -34,10 +40,26 @@
         "VENDOR_OF",
         "WORKS_ON"
       ],
+      "missing": [],
       "passed": true
     },
-    "duplicate_person_names": {
-      "duplicates": [],
+    "duplicate_entity_rate": {
+      "duplicate_entities": [],
+      "duplicate_count": 0,
+      "total_named_entities": 10,
+      "rate": 0.0,
+      "passed": true
+    },
+    "missing_relation_rate": {
+      "required_relation_types": 5,
+      "found_required_relation_types": 5,
+      "total_graph_relationships": 24,
+      "rate": 0.0,
+      "passed": true
+    },
+    "schema_violations": {
+      "count": 0,
+      "violations": [],
       "passed": true
     },
     "project_aswan_workers": {
